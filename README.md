@@ -9,7 +9,7 @@ Time spent: `<Number of hours spent>`
 #### Required
 
 - [ ] On dragging the message left:
-  - [ ] Initially, the revealed background color should be gray.
+  - [x] Initially, the revealed background color should be gray.
   - [ ] As the reschedule icon is revealed, it should start semi-transparent and become fully opaque. If released at this point, the message should return to its initial position.
   - [ ] After 60 pts, the later icon should start moving with the translation and the background should change to yellow.
     - [ ] Upon release, the message should continue to reveal the yellow background. When the animation it complete, it should show the reschedule options.
