@@ -13,9 +13,9 @@ class MailboxViewController: UIViewController {
     @IBOutlet var imageView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var messageView: UIView!
-    @IBOutlet weak var messageImage: UIImageView!
     @IBOutlet weak var rescheduleImage: UIImageView!
     @IBOutlet weak var archiveImage: UIImageView!
+    @IBOutlet weak var messageImage: UIImageView!
     @IBOutlet weak var reschedulePanelImageView: UIImageView!
     @IBOutlet weak var reschedulePanelBackButton: UIButton!
     
@@ -82,7 +82,6 @@ class MailboxViewController: UIViewController {
             // icon is semi-transparent
             archiveImage.alpha = 00.3
             rescheduleImage.alpha = 00.3
-
             
         } else if sender.state == .changed {
             
@@ -150,12 +149,8 @@ class MailboxViewController: UIViewController {
                             // options panel fades in
                             // self.reschedulePanelImageView.alpha = 1
                             
-                            
-                
                             //execute segue programmatically
-                            [self .performSegue(withIdentifier: "rescheduleSegue", sender: self)]
-                            
-                            
+                            [self.performSegue(withIdentifier: "rescheduleSegue", sender: self)]
                             
                         }, completion: nil)
                     

@@ -72,7 +72,7 @@
                         <outlet property="messageView" destination="rrA-hl-JUt" id="qCr-xU-cTc"/>
                         <outlet property="rescheduleImage" destination="nLi-ps-hRH" id="cB3-Jh-tAb"/>
                         <outlet property="scrollView" destination="xP8-ap-wh4" id="8qd-bE-skO"/>
-                        <segue destination="lMt-g8-tPg" kind="push" identifier="rescheduleSegue" id="0ta-bR-PRQ"/>
+                        <segue destination="lMt-g8-tPg" kind="push" identifier="rescheduleSegue" animates="NO" id="0ta-bR-PRQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tzg-J4-eKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,7 +89,7 @@
             <objects>
                 <viewController id="lMt-g8-tPg" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cw-Mv-peB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1682"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="reschedule" id="Bmu-Rq-eHl">
@@ -107,6 +107,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="LAf-M3-QbZ"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZk-fR-vEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
