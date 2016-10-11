@@ -48,7 +48,7 @@
                                                 <gestureRecognizers/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.91741800308227539" green="0.92149537801742554" blue="0.92966729402542114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91741800309999999" green="0.92149537800000003" blue="0.92966729400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="pfa-d1-YKh" appends="YES" id="gIm-LN-2L9"/>
@@ -66,10 +66,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1682"/>
                     <connections>
+                        <outlet property="archiveImage" destination="h57-E2-rla" id="nJf-mR-r7X"/>
                         <outlet property="imageView" destination="h11-Zg-RLR" id="gJJ-oi-4cD"/>
                         <outlet property="messageImage" destination="v3I-ga-df0" id="dmM-fc-1dY"/>
                         <outlet property="messageView" destination="rrA-hl-JUt" id="qCr-xU-cTc"/>
+                        <outlet property="rescheduleImage" destination="nLi-ps-hRH" id="cB3-Jh-tAb"/>
                         <outlet property="scrollView" destination="xP8-ap-wh4" id="8qd-bE-skO"/>
+                        <segue destination="lMt-g8-tPg" kind="push" identifier="rescheduleSegue" id="0ta-bR-PRQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tzg-J4-eKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,6 +84,34 @@
             </objects>
             <point key="canvasLocation" x="633.5" y="152"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="h35-it-Zwf">
+            <objects>
+                <viewController id="lMt-g8-tPg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8cw-Mv-peB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1682"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="reschedule" id="Bmu-Rq-eHl">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ith-wa-ouj">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="reschedulePanelBackButton:" destination="Zcb-Zo-6ym" eventType="touchUpInside" id="prg-fl-63k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LAf-M3-QbZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RZk-fR-vEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="152"/>
+        </scene>
     </scenes>
     <resources>
         <image name="archive_icon" width="25" height="25"/>
@@ -89,6 +120,7 @@
         <image name="later_icon" width="25" height="25"/>
         <image name="message" width="320" height="86"/>
         <image name="nav" width="320" height="65"/>
+        <image name="reschedule" width="320" height="568"/>
         <image name="search" width="320" height="42"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -96,4 +128,5 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.91741800309999999" green="0.92149537800000003" blue="0.92966729400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
