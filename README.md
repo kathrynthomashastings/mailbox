@@ -2,7 +2,7 @@
 
 The purpose of this homework is to leverage animations and gestures to implement more sophisticated interactions. We're going to use the techniques from this week to implement the Mailbox interactions.
 
-Time spent: `<Number of hours spent>`
+Time spent: `12+ hours`
 
 ### Features
 
@@ -37,23 +37,27 @@ Time spent: `<Number of hours spent>`
 
 #### The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] List anything else that you can get done to improve the app functionality!
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. Better understand animations
+2. More time
 
 ### Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/vdJxdfr.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+* Despite working on this project for more than 12 hours over the course of multiple days and working with Charlie for 03 hours, I was unable to solve the challenge.
+* I’m frustrated because I have not had much success feeling supported in this course when I have questions, whether by the content or ability to ask questions to our instructors. I gather this may because I am taking this class remotely (only person on site in Seattle) and do not have in person help (instructors or classmates to rely on for input and group help.)
+* I am uploading the content that I have. I will continue to work on this challenge, as I feel like I’m close to resolving it.
 
 * Any libraries or borrowed content.
