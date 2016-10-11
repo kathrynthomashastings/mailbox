@@ -17,7 +17,6 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var archiveImage: UIImageView!
     @IBOutlet weak var messageImage: UIImageView!
     @IBOutlet weak var reschedulePanelImageView: UIImageView!
-    @IBOutlet weak var reschedulePanelBackButton: UIButton!
     
     var messageOriginalCenter: CGPoint!
     var messageOffset: CGFloat!
@@ -144,42 +143,33 @@ class MailboxViewController: UIViewController {
                         self.rescheduleImage.center = CGPoint(x: -375, y: self.messageOriginalCenter.y)
                     
                     }) { (Bool) in
-                        UIView.animate(withDuration: 00.3, animations: {
+                        UIView.animate(withDuration: 00.6, animations: {
                             
                             // options panel fades in
-                            // self.reschedulePanelImageView.alpha = 1
-                            
-                            //execute segue programmatically
                             [self.performSegue(withIdentifier: "rescheduleSegue", sender: self)]
                             
                         }, completion: nil)
                     
                     }
                     
-                    // messageView closes by decreasing height
-
+                    if translation.x > -260 {
+                        
+                        // icon changes to list icon
+                        // background-color: brown
+                        // released? maintains brown background
+                        // and options appear once animation is complete
+                        
+                    }
+                    
                 }
+                
             }
-        
-        //            } else if reschedule > 260 {
-        //
-        //                icon changes to list icon
-        //                background-color: brown
-        //                released? maintains brown background
-        //                and options appear once animation is complete
-        //
-        //            }
+            
+        }
         
     }
-    }
     
-    @IBAction func reschedulePanelBackButton(_ sender: AnyObject) {
-    
-        // dismiss(animated: true, completion: nil)
-        
-    
-    }
-    
+
     /*
      // MARK: - Navigation
      

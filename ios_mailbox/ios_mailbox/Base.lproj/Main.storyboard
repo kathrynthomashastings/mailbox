@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="Zcb-Zo-6ym">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="EAb-xD-2RS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -63,6 +63,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nQ0-p0-Kye"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1682"/>
                     <connections>
@@ -72,7 +73,7 @@
                         <outlet property="messageView" destination="rrA-hl-JUt" id="qCr-xU-cTc"/>
                         <outlet property="rescheduleImage" destination="nLi-ps-hRH" id="cB3-Jh-tAb"/>
                         <outlet property="scrollView" destination="xP8-ap-wh4" id="8qd-bE-skO"/>
-                        <segue destination="lMt-g8-tPg" kind="push" identifier="rescheduleSegue" animates="NO" id="0ta-bR-PRQ"/>
+                        <segue destination="lMt-g8-tPg" kind="modal" identifier="rescheduleSegue" animates="NO" id="0ta-bR-PRQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tzg-J4-eKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,12 +83,12 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="633.5" y="152"/>
+            <point key="canvasLocation" x="1181" y="659"/>
         </scene>
-        <!--View Controller-->
+        <!--Reschedule View Controller-->
         <scene sceneID="h35-it-Zwf">
             <objects>
-                <viewController id="lMt-g8-tPg" sceneMemberID="viewController">
+                <viewController id="lMt-g8-tPg" customClass="RescheduleViewController" customModule="ios_mailbox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cw-Mv-peB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,6 +101,7 @@
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="rescheduleBack:" destination="lMt-g8-tPg" eventType="touchUpInside" id="WvH-Jp-3Qw"/>
                                     <action selector="reschedulePanelBackButton:" destination="Zcb-Zo-6ym" eventType="touchUpInside" id="prg-fl-63k"/>
                                 </connections>
                             </button>
@@ -109,10 +111,31 @@
                     <navigationItem key="navigationItem" id="LAf-M3-QbZ"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="rescheduleBackButton" destination="ith-wa-ouj" id="YrC-bK-GLs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZk-fR-vEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1161" y="152"/>
+            <point key="canvasLocation" x="1747.5" y="151.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fZf-XV-4ys">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="EAb-xD-2RS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eWl-Ny-JG8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zcb-Zo-6ym" kind="relationship" relationship="rootViewController" id="Y0D-F3-Ozf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LPL-h9-bfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="633.5" y="151.5"/>
         </scene>
     </scenes>
     <resources>
