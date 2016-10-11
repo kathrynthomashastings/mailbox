@@ -1,5 +1,5 @@
 //
-//  RescheduleViewController.swift
+//  ListViewController.swift
 //  ios_mailbox
 //
 //  Created by Kathryn Hastings on 10/10/16.
@@ -8,14 +8,8 @@
 
 import UIKit
 
-class RescheduleViewController: UIViewController {
+class ListViewController: UIViewController {
 
-    @IBOutlet weak var rescheduleBackButton: UIButton!
-    
-    // Declare a variable that will eventually link us back to the mailboxViewcontroller so we can call methods from the rescheduleViewController
-    var mailboxViewController: MailboxViewController!
-    
-        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,16 +32,4 @@ class RescheduleViewController: UIViewController {
     }
     */
 
-    @IBAction func rescheduleBack(_ sender: AnyObject) {
-
-        // navigationController?.popViewController(animated: true)
-        mailboxViewController.hideMessage()
-        
-        dismiss(animated: true, completion: nil)
-        
-        // messageView closes by decreasing height
-        
-        
-    
-    }
 }

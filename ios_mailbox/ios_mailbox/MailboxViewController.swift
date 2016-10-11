@@ -14,15 +14,20 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var rescheduleImage: UIImageView!
+    @IBOutlet weak var listImage: UIImageView!
     @IBOutlet weak var archiveImage: UIImageView!
     @IBOutlet weak var messageImage: UIImageView!
+    @IBOutlet weak var feedImage: UIImageView!
     @IBOutlet weak var reschedulePanelImageView: UIImageView!
+    @IBOutlet weak var feedImageView: UIImageView!
     
     var messageOriginalCenter: CGPoint!
+    var feedOriginalCenter: CGPoint!
     var messageOffset: CGFloat!
     var messageRight: CGPoint!
     var messageLeft: CGPoint!
     var rescheduleImageOriginalCenter: CGPoint!
+    // var listImageOriginalCenter: CGPoint!
     
     var greyColour = UIColor(red: 227/255.0, green: 225/255.0, blue: 227/255.0, alpha: 1.0)
     var yellowColour = UIColor(red: 251/255.0, green: 210/255.0, blue: 51/255.0, alpha: 1.0)
@@ -39,19 +44,14 @@ class MailboxViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        // The didPan: method will be defined in Step 3 below.
-        // let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(sender:)))
-        // Attach it to a view of your choice. If it's a UIImageView, remember to enable user interaction
-        // messageView.isUserInteractionEnabled = true
-        // messageView.addGestureRecognizer(panGestureRecognizer)
-        
-        
         scrollView.contentSize = CGSize(width: 375, height: 2705)
         
         messageOffset = 0
         messageRight = CGPoint(x: messageImage.center.x - messageOffset,y: messageImage.center.y)
         messageLeft = CGPoint(x: messageImage.center.x + messageOffset,y: messageImage.center.y)
         
+        self.archiveImage.alpha = 0
+        self.listImage.alpha = 0
         self.rescheduleImage.alpha = 0
         
     }
@@ -76,11 +76,15 @@ class MailboxViewController: UIViewController {
             
             print("Gesture began")
             messageOriginalCenter = messageImage.center
+            feedOriginalCenter = messageImage.center
             rescheduleImageOriginalCenter = rescheduleImage.center
             
             // icon is semi-transparent
-            archiveImage.alpha = 00.3
-            rescheduleImage.alpha = 00.3
+            if translation.x < 0 {
+                rescheduleImage.alpha = 00.3
+            }
+            
+            // archiveImage.alpha = 00.3
             
         } else if sender.state == .changed {
             
@@ -100,9 +104,6 @@ class MailboxViewController: UIViewController {
                         // messageView background becomes yellow
                         self.messageView.backgroundColor = self.yellowColour
                         
-                        // FRISBEE
-                        //self.rescheduleImage.center = CGPoint(x: self.messageImage.center.x + translation.x + 100, y: self.messageImage.center.y)
-                        
                         /// The left most x position of the message + the width + the amount you want it away from the right side
                         self.rescheduleImage.center.x = self.messageImage.frame.origin.x + self.messageImage.frame.size.width + 30
 
@@ -110,14 +111,19 @@ class MailboxViewController: UIViewController {
                     
                     if translation.x < -260 {
                         
+                        /*
                         // messageView background becomes brown
                         UIView.animate(withDuration:0.3, animations: {
                             self.messageView.backgroundColor = self.brownColour
                         })
-                        
-                        // icon changes to list icon
 
-                        // released? maintains brown background and options appear once animation is complete
+                        // icon changes to list icon
+                        self.rescheduleImage.alpha = 0
+                        self.listImage.alpha = 1
+                        
+                        /// The left most x position of the message + the width + the amount you want it away from the right side
+                        self.listImage.center.x = self.messageImage.frame.origin.x + self.messageImage.frame.size.width + 30
+                        */
                         
                     }
                     
@@ -158,10 +164,25 @@ class MailboxViewController: UIViewController {
                     
                     if translation.x > -260 {
                         
-                        // icon changes to list icon
-                        // background-color: brown
-                        // released? maintains brown background
-                        // and options appear once animation is complete
+                        /* 
+                        UIView.animate(withDuration: 00.6, animations: {
+                            // messageView background remains brown
+                            self.messageView.backgroundColor = self.brownColour
+                            
+                            // messageImage and rescheduleImage pans left off screen
+                            self.messageImage.center = CGPoint(x: -375, y: self.messageOriginalCenter.y)
+                            self.listImage.center = CGPoint(x: -375, y: self.messageOriginalCenter.y)
+                            
+                        }) { (Bool) in
+                            UIView.animate(withDuration: 00.6, animations: {
+                                
+                                // options panel fades in
+                                [self.performSegue(withIdentifier: "listSegue", sender: self)]
+                                
+                                }, completion: nil)
+                            
+                        }
+                        */
                         
                     }
                     
@@ -173,16 +194,32 @@ class MailboxViewController: UIViewController {
         
     }
     
+    func hideMessage() {
+        
+        // Hide the message
+        print ("Message should hide")
+        
+        UIView.animate(withDuration: 00.6) {
+            
+            // BEGIN AGAIN
+            
+        }
+        
+    }
+    
 
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+        
+        // Get the new view controller using segue.destinationViewController.
+        let rescheduleViewController = segue.destination as! RescheduleViewController
+        
+        // Pass the selected object to the new view controller.
+        rescheduleViewController.mailboxViewController = self
+
+    }
     
 }
 

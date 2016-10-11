@@ -38,6 +38,10 @@
                                                 <frame key="frameInset" minX="315" minY="21" width="60" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="list_icon" id="Pot-l1-Ss3" customClass="ListImage">
+                                                <frame key="frameInset" minX="315" minY="21" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="archive_icon" id="h57-E2-rla">
                                                 <frame key="frameInset" minY="20" width="60" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -68,12 +72,16 @@
                     <size key="freeformSize" width="375" height="1682"/>
                     <connections>
                         <outlet property="archiveImage" destination="h57-E2-rla" id="nJf-mR-r7X"/>
+                        <outlet property="feedImage" destination="qcR-3x-shG" id="yBW-ua-uTe"/>
+                        <outlet property="feedImageView" destination="qcR-3x-shG" id="efs-cT-FEi"/>
                         <outlet property="imageView" destination="h11-Zg-RLR" id="gJJ-oi-4cD"/>
+                        <outlet property="listImage" destination="Pot-l1-Ss3" id="Pa2-LI-jB0"/>
                         <outlet property="messageImage" destination="v3I-ga-df0" id="dmM-fc-1dY"/>
                         <outlet property="messageView" destination="rrA-hl-JUt" id="qCr-xU-cTc"/>
                         <outlet property="rescheduleImage" destination="nLi-ps-hRH" id="cB3-Jh-tAb"/>
                         <outlet property="scrollView" destination="xP8-ap-wh4" id="8qd-bE-skO"/>
                         <segue destination="lMt-g8-tPg" kind="modal" identifier="rescheduleSegue" animates="NO" id="0ta-bR-PRQ"/>
+                        <segue destination="Dhr-J1-tv7" kind="push" identifier="listSegue" id="LZ6-4B-XZR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tzg-J4-eKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,6 +92,21 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1181" y="659"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="HDM-VG-ZoI">
+            <objects>
+                <viewController id="Dhr-J1-tv7" customClass="ListViewController" customModule="ios_mailbox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JRm-iR-GZK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1682"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FTn-xz-tkl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mWP-Gz-5Zj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2334" y="659"/>
         </scene>
         <!--Reschedule View Controller-->
         <scene sceneID="h35-it-Zwf">
@@ -102,7 +125,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="rescheduleBack:" destination="lMt-g8-tPg" eventType="touchUpInside" id="WvH-Jp-3Qw"/>
-                                    <action selector="reschedulePanelBackButton:" destination="Zcb-Zo-6ym" eventType="touchUpInside" id="prg-fl-63k"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -143,6 +165,7 @@
         <image name="feed" width="320" height="1202"/>
         <image name="help_label" width="320" height="37"/>
         <image name="later_icon" width="25" height="25"/>
+        <image name="list_icon" width="25" height="25"/>
         <image name="message" width="320" height="86"/>
         <image name="nav" width="320" height="65"/>
         <image name="reschedule" width="320" height="568"/>
