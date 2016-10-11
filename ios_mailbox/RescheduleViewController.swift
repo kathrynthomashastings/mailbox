@@ -39,7 +39,7 @@ class RescheduleViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         // messageView closes by decreasing height
         
-        self.messageView.hidden = true
+        // self.messageView.hidden = true
         
     
     }

@@ -101,7 +101,11 @@ class MailboxViewController: UIViewController {
                         self.messageView.backgroundColor = self.yellowColour
                         
                         // FRISBEE
-                        self.rescheduleImage.center = CGPoint(x: self.messageImage.center.x + translation.x + 100, y: self.messageImage.center.y)
+                        //self.rescheduleImage.center = CGPoint(x: self.messageImage.center.x + translation.x + 100, y: self.messageImage.center.y)
+                        
+                        /// The left most x position of the message + the width + the amount you want it away from the right side
+                        self.rescheduleImage.center.x = self.messageImage.frame.origin.x + self.messageImage.frame.size.width + 30
+
                     })
                     
                     if translation.x < -260 {
