@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "97B979D4D45B746E9B1F01D8A9CA17B3775E792F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "402EAB2ECDA1AD433DD6D4D69C632CD6CDC5B922" : 9223372036854775807,
+    "97B979D4D45B746E9B1F01D8A9CA17B3775E792F" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E4B7F2C8-68BA-4B7A-8FE6-16624020A8EC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "402EAB2ECDA1AD433DD6D4D69C632CD6CDC5B922" : "",
+    "97B979D4D45B746E9B1F01D8A9CA17B3775E792F" : "ios_mailbox\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ios_mailboxx",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios_mailboxx\/ios_mailboxx.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pictureelectric\/hasticakes.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "402EAB2ECDA1AD433DD6D4D69C632CD6CDC5B922"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pictureelectric\/ios_mailbox.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "97B979D4D45B746E9B1F01D8A9CA17B3775E792F"
+    }
+  ]
+}
